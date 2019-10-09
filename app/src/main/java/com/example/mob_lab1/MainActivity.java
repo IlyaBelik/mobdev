@@ -54,11 +54,11 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else if(password.length() < passMinLenght){  // Validation of password
                     password.setText("");
-                    password.setHint("Minimal lengt of password should be 8!");
+                    password.setError("Minimal lengt of password should be 8!");
                 }
                 else if(!emailID.getText().toString().trim().matches(emailPattern)){   // Validation of email
                     emailID.setText("");
-                    emailID.setHint("Please re-enter your email correctly");
+                    emailID.setError("Please re-enter your email correctly");
                 }
                 else if(!(email.isEmpty() && pwd.isEmpty())){
                     mFirebaseAuth.createUserWithEmailAndPassword(email, pwd).addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
