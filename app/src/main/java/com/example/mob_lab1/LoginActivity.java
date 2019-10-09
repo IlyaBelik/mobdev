@@ -73,11 +73,11 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 else if(password.length() < passMinLenght){  // Validation of pass
                     password.setText("");
-                    password.setHint("Minimal lengt of password should be 8!");
+                    password.setError("Minimal lengt of password should be 8!");
                 }
                 else if(!emailID.getText().toString().trim().matches(emailPattern)){  // Validation of email
                     emailID.setText("");
-                    emailID.setHint("Please re-enter your email correctly");
+                    emailID.setError("Please re-enter your email correctly");
                 }
                 else if(email.isEmpty() && pwd.isEmpty()){
                     Toast.makeText(LoginActivity.this, "Fields are empty!",Toast.LENGTH_SHORT).show();
