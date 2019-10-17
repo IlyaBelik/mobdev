@@ -20,22 +20,26 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
-    EditText emailID;
-    EditText password;
-    Button btnSignUp;
-    TextView tvSignIn;
-    FirebaseAuth mFirebaseAuth;
+    private EditText emailID;
+    private EditText password;
+    private Button btnSignUp;
+    private TextView tvSignIn;
+    private FirebaseAuth mFirebaseAuth;
     private int passMinLenght = 8;
     public String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
     private FirebaseAuth.AuthStateListener mAuthStateListener;
+    
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mFirebaseAuth.addAuthStateListener(mAuthStateListener);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
-
         mFirebaseAuth = FirebaseAuth.getInstance();
         emailID = findViewById(R.id.editText);
         password = findViewById(R.id.editText3);
@@ -46,12 +50,11 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser mFirebaseUser = mFirebaseAuth.getCurrentUser();
-                if(mFirebaseUser != null){
+                if (mFirebaseUser != null) {
                     Toast.makeText(LoginActivity.this,"You are logged in",Toast.LENGTH_SHORT).show();
                     Intent i = new Intent(LoginActivity.this, HomeActivity.class);
                     startActivity(i);
-                }
-                else {
+                } else {
                     Toast.makeText(LoginActivity.this,"Please Login",Toast.LENGTH_SHORT).show();
                 }
             }
@@ -63,7 +66,7 @@ public class LoginActivity extends AppCompatActivity {
                 String email = emailID.getText().toString();
                 String pwd = password.getText().toString();
 
-                if(email.isEmpty()){
+                if (email.isEmpty()) {
                     emailID.setError("Please enter your email");
                     emailID.requestFocus();
                 }
@@ -109,12 +112,7 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intSignUp);
             }
         });
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        mFirebaseAuth.addAuthStateListener(mAuthStateListener);
+        
     }
 
     public void onBackPressed(){
