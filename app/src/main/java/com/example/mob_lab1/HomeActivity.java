@@ -26,7 +26,9 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intentToMain);
             }
         });
+        
     }
+    
     public void onBackPressed(){
         moveTaskToBack(true);
     }
