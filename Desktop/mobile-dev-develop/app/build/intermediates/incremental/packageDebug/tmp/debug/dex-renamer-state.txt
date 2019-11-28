@@ -1,0 +1,4 @@
+#Thu Nov 28 10:05:38 EET 2019
+base.0=C\:\\Users\\Ilya\\Desktop\\mobile-dev-develop\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
