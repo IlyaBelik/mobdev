@@ -32,11 +32,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Profile extends AppCompatActivity {
-    EditText editName;
-    EditText editEmail;
-    Button button;
-    ImageView user_photo;
-    public static final int PICK_IMAGE = 1;
+    public static final int PICK_IMAGE = 1;    
+    public EditText editName;
+    public EditText editEmail;
+    public Button button;
+    public ImageView user_photo;
     User user = new User();
 
 
@@ -59,7 +59,6 @@ public class Profile extends AppCompatActivity {
                 user.email = editE;
                 user.name = editN;
                 myRef.setValue(user);
-
             }
         });
 
