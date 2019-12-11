@@ -13,7 +13,6 @@ import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 public class TripAdapter extends RecyclerView.Adapter<TripAdapter.MyViewHolder> {
     private List<Trip> tripList;
     private Context context;
@@ -27,20 +26,6 @@ public class TripAdapter extends RecyclerView.Adapter<TripAdapter.MyViewHolder> 
         this.tripList = tripList;
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView come_from, come_to, avia_company, speed, flight_distance;
-        ImageView image;
-        public MyViewHolder(@NonNull View itemView) {
-            super(itemView);
-            come_from = itemView.findViewById(R.id.come_from);
-            come_to = itemView.findViewById(R.id.come_to);
-            avia_company = itemView.findViewById(R.id.avia_company);
-            speed = itemView.findViewById(R.id.speed);
-            image = itemView.findViewById(R.id.image);
-            flight_distance = itemView.findViewById(R.id.flight_distance);
-
-        }
-    }
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -65,6 +50,24 @@ public class TripAdapter extends RecyclerView.Adapter<TripAdapter.MyViewHolder> 
     public int getItemCount() {
         return tripList.size();
     }
+    
+     private class MyViewHolder extends RecyclerView.ViewHolder {
+        public TextView{ come_from, 
+                        come_to, 
+                        avia_company, 
+                        speed, 
+                        flight_distance;}
+        ImageView image;
+        public MyViewHolder(@NonNull View itemView) {
+            super(itemView);
+            come_from = itemView.findViewById(R.id.come_from);
+            come_to = itemView.findViewById(R.id.come_to);
+            avia_company = itemView.findViewById(R.id.avia_company);
+            speed = itemView.findViewById(R.id.speed);
+            image = itemView.findViewById(R.id.image);
+            flight_distance = itemView.findViewById(R.id.flight_distance);
+
+        }
 
 
 }
