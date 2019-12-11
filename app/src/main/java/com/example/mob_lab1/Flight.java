@@ -1,7 +1,14 @@
 package com.example.mob_lab1;
-
 public class Trip {
-    public Trip(String name, String come_from, String come_to, String avia_company, String speed, String registration_info, String flight_distance,String img) {
+    public Trip(String name, 
+                String come_from, 
+                String come_to, 
+                String avia_company, 
+                String speed, 
+                String registration_info, 
+                String flight_distance,
+                String img)
+    {
         this.name = name;
         this.come_from = come_from;
         this.come_to = come_to;
@@ -17,9 +24,7 @@ public class Trip {
     }
 
     private String name, come_from, come_to, avia_company, speed, registration_info, flight_distance,img;
-    public Trip() {
-    }
-
+  
     public String getName() {
         return name;
     }
